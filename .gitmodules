@@ -37,3 +37,6 @@
 [submodule "application/config"]
 	path = application/config
 	url = https://tyllo@bitbucket.org/tyllo/briz-sto-config.git
+[submodule "application/classes/Model"]
+	path = application/classes/Model
+	url = https://tyllo@bitbucket.org/tyllo/briz-sto-model.git
