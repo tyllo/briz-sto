@@ -152,7 +152,7 @@ Kohana::modules(array(
  * If you have not defined a cookie salt in your Cookie class then
  * uncomment the line below and define a preferrably long salt.
  */
-// Cookie::$salt = NULL;
+Cookie::$salt = Kohana::$config->load('bootstrap.salt');
 
 // Bootstrap the Routes
 include APPPATH.'routes'.EXT;

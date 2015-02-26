@@ -13,4 +13,3 @@ composer.phar
 vendor/*
 *cache/
 public/
-application/routes.php
