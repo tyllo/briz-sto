@@ -22,7 +22,7 @@ else
  * @link http://kohanaframework.org/guide/using.configuration
  * @link http://www.php.net/manual/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('Asia/Vladivostok');
 
 /**
  * Set the default locale.
@@ -30,7 +30,7 @@ date_default_timezone_set('America/Chicago');
  * @link http://kohanaframework.org/guide/using.configuration
  * @link http://www.php.net/manual/function.setlocale
  */
-setlocale(LC_ALL, 'en_US.utf-8');
+setlocale(LC_ALL, 'ru_RU.utf-8');
 
 /**
  * Enable the Kohana auto-loader.
@@ -68,7 +68,7 @@ mb_substitute_character('none');
 /**
  * Set the default language
  */
-I18n::lang('en-us');
+I18n::lang('ru-RU');
 
 if (isset($_SERVER['SERVER_PROTOCOL']))
 {
@@ -87,6 +87,9 @@ if (isset($_SERVER['KOHANA_ENV']))
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
 
+Kohana::$environment = ( $_SERVER['SERVER_ADDR'] === '127.0.0.1' )
+	? Kohana::DEVELOPMENT : Kohana::PRODUCTION;
+
 /**
  * Initialize Kohana, setting the default options.
  *
@@ -103,7 +106,16 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/kohana/',
+	'base_url'   => '/',
+
+	// Профилирование только для стадии разработки
+	'profile'	=> Kohana::$environment === Kohana::DEVELOPMENT,
+
+	// Кеширование только для production
+	'caching'	=> Kohana::$environment === Kohana::PRODUCTION,
+
+	'index_file' => false,
+	'errors'     => true,
 ));
 
 /**
@@ -129,8 +141,8 @@ Kohana::modules(array(
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	//'jade'        => MODPATH.'jade',       // jade to php
-	//'scss'        => MODPATH.'scss',       // scss to css
+	'jade'          => MODPATH.'jade',       // jade to php
+	'scss'          => MODPATH.'scss',       // scss to css
 	));
 
 /**
@@ -142,12 +154,5 @@ Kohana::modules(array(
  */
 // Cookie::$salt = NULL;
 
-/**
- * Set the routes. Each route must have a minimum of a name, a URI and a set of
- * defaults for the URI.
- */
-Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'welcome',
-		'action'     => 'index',
-	));
+// Bootstrap the Routes
+include APPPATH.'routes'.EXT;
