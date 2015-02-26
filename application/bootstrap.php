@@ -87,7 +87,7 @@ if (isset($_SERVER['KOHANA_ENV']))
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
 
-Kohana::$environment = ( $_SERVER['SERVER_ADDR'] === '127.0.0.1' )
+Kohana::$environment = ( $_SERVER['SERVER_NAME'] === 'localhost' )
 	? Kohana::DEVELOPMENT : Kohana::PRODUCTION;
 
 /**
