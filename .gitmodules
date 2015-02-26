@@ -31,3 +31,6 @@
 [submodule "modules/jade"]
 	path = modules/jade
 	url = git://github.com/tyllo/kohana-jade.git
+[submodule "modules/scss"]
+	path = modules/scss
+	url = git://github.com/tyllo/kohana-scss.git
