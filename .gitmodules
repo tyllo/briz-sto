@@ -34,3 +34,6 @@
 [submodule "modules/scss"]
 	path = modules/scss
 	url = git://github.com/tyllo/kohana-scss.git
+[submodule "application/config"]
+	path = application/config
+	url = https://tyllo@bitbucket.org/tyllo/briz-sto-config.git
