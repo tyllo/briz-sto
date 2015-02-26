@@ -15,7 +15,7 @@ abstract class Controller_Layouts_Page extends Controller_Template {
 		// Load the template
 		$this->template = Jade::factory();
 
-		// вытащим из модели все переменный []
+        // если заглавная страница, то выводим слайдер, иначе крошки
 		$params = Model::factory('Layouts_Page')->get('default');
 
 		// забиндим переменную по умолчанию в шаблоне

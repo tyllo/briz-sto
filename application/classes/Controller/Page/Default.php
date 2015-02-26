@@ -15,7 +15,7 @@ class Controller_Page_Default extends Controller_Layouts_Page {
 		// какой контроллер вызван
 		$controller = Request::current()->uri();
 
-        // если заглавная страница, то выводим слайдер, иначе крошки
+    // если заглавная страница, то выводим слайдер, иначе крошки
 
 		// делаем запрос к контроллер $subheader с параметрами $param
 		if ($controller === '/'):
