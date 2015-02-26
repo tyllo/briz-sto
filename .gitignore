@@ -14,8 +14,3 @@ vendor/*
 *cache/
 public/
 application/routes.php
-application/classes/*
-! application/classes/Controller
-! application/classes/Model
-application/cache/*
-application/config/*
