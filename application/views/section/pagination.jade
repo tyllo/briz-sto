@@ -1,0 +1,27 @@
+// section/pagination
+
+//- $content = [prev,next,cur,links]
+- extract($content)
+
+.row
+	.pagination.text-center
+		ul
+			if ($cur == $prev)
+				li.active: a(href=prev) Назад
+			else
+				li: a(href=prev) Назад
+
+			
+			each link, i in links
+				if ($cur == $link)
+					li.active: a(href=link)= i
+				else
+					li: a(href=link)= i
+
+			
+			if ($cur == $next)
+				li.active: a(href=next) Вперед
+			else
+				li: a(href=next) Вперед
+
+// section/pagination

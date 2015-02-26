@@ -1,0 +1,20 @@
+// layouts/page-aside
+
+extends skeleton
+
+// content
+section#content: block conteiner
+	//- p default block conteiner
+	.container: .row
+		.span9
+			block content
+				//- p default block content
+				!{content}
+		.span3
+			block aside
+				//- p default block aside
+				!{aside}
+// /content
+
+
+// /layouts/page-aside

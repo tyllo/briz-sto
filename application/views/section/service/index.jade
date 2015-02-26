@@ -1,0 +1,28 @@
+// section/service/index
+
+
+.conteiner: .row: ul.blog-list
+	each arr in content
+		- extract($arr);
+		.span6: li
+			.info
+				.date-box
+					.day!=   day
+					.month!= month
+			.preview
+				a(href!=link)
+					img(src!=img
+						alt!=alt)
+				h3.blog-title!= title
+
+			!= cut
+
+			.meta-info
+				span Автор: !{author}
+				//
+					span | !{event}
+					span | !{promotion}
+					span | !{comments}
+					span |
+
+// /section/service/index

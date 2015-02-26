@@ -1,0 +1,18 @@
+// section/slider
+
+- $sliders = & $content;
+
+.flexslider.main-slider: div.flexslider.main-slider: ul.slides
+
+	each slider, i in sliders
+		// slider <?= $i ?>
+		li.slide-for-sale
+			.container: .slider-info: .inner
+				h1 !{slider['h1']}
+				.text #{slider['text']}
+				//- span.price: span.more
+			img(src="/images/slider/slide-#{i}.jpg", alt="#{slider['h1']}")
+
+div.clearfix
+
+// /section/slider

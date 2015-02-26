@@ -1,0 +1,20 @@
+// section/gallery
+
+- $gallery = & $content;
+
+.row
+	#gallery.gallery
+		each item, i in gallery
+			- extract($item);
+
+			// Gallery item
+			.span3.item(class=tags)
+				a.preview(	href="/images/gallery/pic-#{i}.jpg"
+							rel="prettyPhoto[mech]"
+							title!=alt)
+
+					img(src="/images/gallery/preview/pic-#{i}_.jpg"
+						alt!=title)
+				h4!= title
+
+// /section/gallery

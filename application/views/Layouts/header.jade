@@ -1,0 +1,15 @@
+// header
+.container
+	.row
+		// logo
+		.span3
+			div#logo: .inner
+				a(href="/"): img(src="/images/logo.png", alt=title)
+		// /logo
+
+		// mainmenu
+		.span9
+			#mainmenu-container
+				+navbar(pages,currentPage)#mainmenu
+		// /mainmenu
+// /header

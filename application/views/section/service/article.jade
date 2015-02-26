@@ -1,0 +1,21 @@
+// section/service/article
+
+- extract($content);
+
+.blog-read
+	.info
+		.date-box
+			span.day= day
+			span.month= month
+
+	.preview
+		img(src="/images/pic-blank-1.gif"
+			data-original!=img
+			alt!=title)
+
+		h3.blog-title!= title
+		!= text
+
+	.meta-info Автор: !{author}
+
+// /section/service/article

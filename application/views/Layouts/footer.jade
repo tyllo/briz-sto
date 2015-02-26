@@ -1,0 +1,35 @@
+// footer
+.container
+	.row
+		.span3
+			h3 Photo Stream
+			#flickr-photo-stream
+				script(src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=111078973@N02")
+			.clearfix
+		.span6
+			h3 О нас
+			| Автосервис "Бриз" осуществляет ремонт легковых и грузовых автомобилей, а также водных мотоциклов. Мы оказываем полный перечень услуг по техническому обслуживанию и ремонту. Мы работаем с организациями, страховыми компаниями. В нашем автосервисе Вы можете расплатиться наличным и безналичным способом, а также банковскими карточками.
+		.span3
+			// address
+			.widget.widget-text
+				h3 Наш Адрес
+				address г. Владивосток, пр-т 100-лет Владивостока, 57А/3 (район ДОСААФ)
+					span
+						strong Офис
+						| 8 (423) 2-300-846
+					span
+						strong Офис
+						| 8 (423) 2-300-857
+					span
+						strong Цеха
+						| 8 (423) 292-02-22
+					span
+						strong Запчасти
+						| 8-908-99-22-444
+					span
+						strong Email:
+						a(href="mailto:sto-briz@mail.ru") sto-briz@mail.ru
+	.subfooter: .container: .row
+		.span6  2013-#{date("Y")}гг. - Автосервис "Бриз"
+		.span6: +navbar(pages,currentPage)
+// /footer

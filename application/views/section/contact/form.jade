@@ -1,0 +1,33 @@
+// section/contact/form
+
+
+h4 Свяжитесь с нами прямо сейчас!
+p Напишите свой отзыв или свой вопрос, и наши специалисты свяжутся с Вами в ближайшее время.
+br
+
+.contact_form_holder
+	form#contact.row(name='form1', method='post', action='/contact/send')
+		.span3
+			label Ваше имя
+			input#name.full(type='text', name='name')
+			#error_name.error Проверьте свой email
+
+		.span6
+			label Email
+				span.req
+			input#email.full(type='text', name='email')
+			#error_email.error Проверьте свой email
+
+		.span9
+			label Напишите здесь свое сообщение или вопрос
+				span.req
+			textarea#message.full(rows='10', name='message')
+			#error_message.error Проверьте свое сообщение
+
+			#mail_success.success Спасибо. Ваше сообщение отправлено.
+			#mail_failed.error Ошибка, email не отправлен
+
+			p#btnsubmit: input#send.btn.btn-large(type='submit', value="Отправить")
+
+
+// /section/contact/form

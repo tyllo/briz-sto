@@ -1,0 +1,23 @@
+
+// section/subheader
+
+//- [crumbs,controller]
+- extract($content);
+
+#subheader
+	.container
+		.row
+
+			.span6
+				h1!= controller
+
+			.span6
+				.crumb
+					each page, link in crumbs
+						if link
+							a(href=link)= page
+							span.separator >
+						else
+							= page
+
+// /section/subheader

@@ -1,0 +1,24 @@
+// accordion
+
+- $accordions = & $content;
+- $i = 0
+
+h3 Услуги
+.accordion#accordion2
+	each accordion, name in accordions
+		- $i=$i+1
+		// accordion<?= $i ?>
+		.accordion-group
+			.accordion-heading
+				a.accordion-toggle(
+					data-toggle="collapse"
+					data-parent="#accordion2"
+					href="#collapse#{i}") #{name}
+			.accordion-body.collapse(id="collapse#{i}")
+				.accordion-inner
+					ul
+						each str, i in accordion
+							li !{str}
+
+
+// /accordion

@@ -1,0 +1,22 @@
+// section/tags
+
+//- $content = [filters, counts, count]
+- extract($content)
+
+.row
+	.span9
+		ul#filters
+			li: a(href='#', data-filter='*').selected все
+			each tag, link in filters
+				li: a(href='#', data-filter=".#{link}")!= tag
+
+	.span3
+		ul#counts
+			each i, link in counts
+
+				if ( $link == $count )
+					li: a(href=link).selected= i
+				else
+					li: a(href=link)= i
+
+// /section/tags

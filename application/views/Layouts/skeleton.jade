@@ -1,0 +1,42 @@
+
+// layouts/skeleton
+
+include ../mixin
+
+!!! 5
+html(lang="ru")
+
+	head: block head
+		 //- p default block head
+		 include head
+
+	body
+
+		header: block header
+			//- p default block header
+			include header
+
+		// content
+		section#subheader-main: block subheade
+			//- p default block content
+			!{subheader}
+		// /content
+
+		// content
+		section#content: block conteiner
+			//- p default block conteiner
+			!{content}
+		// /content
+
+		// footer
+		footer: block footer
+			//- p default block footer
+			include footer
+		// /footer
+
+		// counter
+		//- p default block counter
+		include ../yandex
+		// /counter
+
+// /layouts/skeleton

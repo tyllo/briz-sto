@@ -1,0 +1,19 @@
+//- ////////////////////////// [navbar] /////////////////////////////////////
+
+mixin navbar(pages,currentPage=0)
+
+	//- Подгрузим $pages = array
+
+	- $id = isset($attributes['id']) ? trim($attributes['id'],'\'') : NULL
+
+	nav: ul(id=id)
+		each page, link in pages
+			if ($link === $currentPage['link'])
+
+				- $link = "/$link"
+				li.selected: a(href=link) !{page}
+
+			else
+
+				- $link = "/$link"
+				li: a(href=link) !{page}
