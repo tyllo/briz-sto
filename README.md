@@ -4,3 +4,6 @@
 
 ## Documentation
 config и Model скрыты в приватном репозитории.
+
+###Us:
+git submodule update --init --recursive system modules/scss modules/jade application/classes/Model application/config
